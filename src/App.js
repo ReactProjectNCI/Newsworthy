@@ -3,7 +3,6 @@ import WorldNews from "./components/WorldNews";
 import NavBar from "./components/NavBar";
 import LocalNews from "./components/LocalNews";
 import Contribute from "./components/Contribute";
-import "./App.css";
 
 function App() {
   return (
