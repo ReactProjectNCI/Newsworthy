@@ -1,0 +1,12 @@
+.WN-container {
+  display: flex;
+}
+.main-news {
+  flex-basis: 60%;
+  background-color: aqua;
+}
+
+.most-read {
+  flex-basis: 40%;
+  background-color: bisque;
+}

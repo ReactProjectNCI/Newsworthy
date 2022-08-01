@@ -1,0 +1,55 @@
+.flexbox-container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  border-bottom: 2px black solid;
+  background-color: black;
+  color: white;
+  height: 55px;
+}
+
+.brand {
+  font-family: Interstate, serif;
+  font-size: 32px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  font-family: Poynter, sans-serif;
+  color: white;
+  background-color: black;
+  height: 100%;
+  align-items: center;
+  padding-top: 12px;
+  border-left: 2px solid;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+}
+
+.contribute {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=banner.css.map */
