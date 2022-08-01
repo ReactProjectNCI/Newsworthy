@@ -12,8 +12,9 @@
 .brand {
   font-family: Interstate, serif;
   font-size: 32px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 15px;
+  font-weight: 900;
 }
 
 .navbar-container {
@@ -37,7 +38,22 @@
   text-decoration: none;
 }
 
-.link:hover {
+.link2 {
+  font-family: Poynter, sans-serif;
+  color: white;
+  background-color: black;
+  height: 100%;
+  align-items: center;
+  padding-top: 12px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-decoration: none;
+}
+
+.link:hover,
+.link2:hover {
   background-color: white;
   color: black;
   text-decoration: underline;

@@ -5,11 +5,13 @@
 .main-news {
   flex-basis: 60%;
   background-color: aqua;
+  padding: 2%;
 }
 
 .most-read {
   flex-basis: 40%;
   background-color: bisque;
+  padding: 2%;
 }
 
 /*# sourceMappingURL=structure.css.map */
