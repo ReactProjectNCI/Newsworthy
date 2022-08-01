@@ -3,6 +3,12 @@ import "../structure.css";
 function WorldNews() {
   return (
     <>
+      <div className="header">
+        <h1 className="brand-header">NewsWorthy</h1>
+        <h3 className="subtitle-header">
+          The Definitive Guide to an Uncertain World
+        </h3>
+      </div>
       <div className="WN-container">
         <div className="main-news">
           <h1>Breaking News</h1>

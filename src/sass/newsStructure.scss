@@ -1,3 +1,28 @@
+$font-stack: Poynter, sans-serif;
+$brand-font: Interstate, serif;
+$brand-size: 48px;
+
+.header {
+  text-align: center;
+  border-bottom: 2px black solid;
+  background-image: url("../images/header-background.webp");
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.brand-header {
+  font-family: $brand-font;
+  font-size: $brand-size;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+.subtitle-header {
+  padding-top: 0;
+  font-family: $brand-font;
+}
+
 .WN-container {
   display: flex;
 }
