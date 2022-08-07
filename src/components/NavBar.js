@@ -23,6 +23,9 @@ function NavBar() {
           <Link to="/contrib" className="link">
             Contribute
           </Link>
+          <Link to="/sub" className="link">
+            Subscribe
+          </Link>
         </div>
       </div>
     </>
