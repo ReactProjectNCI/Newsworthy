@@ -3,10 +3,9 @@
   padding: 0;
   margin: 0;
   align-items: center;
-  border-bottom: 2px black solid;
   background-color: black;
   color: white;
-  height: 55px;
+  height: 44px;
 }
 
 .brand {
@@ -57,7 +56,6 @@
 .link2:hover {
   background-color: white;
   color: black;
-  text-decoration: underline;
 }
 
 .contribute {

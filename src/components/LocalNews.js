@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "../structure.css";
 
+import NoCoOrds from "./NoCoOrds";
+
 function LocalNews() {
   const myApiKey = "3896abe503404a159d076383d70a4539";
 
@@ -44,7 +46,7 @@ function LocalNews() {
         }
       },
       function (err) {
-        setError("User denied geo access");
+        setError(<NoCoOrds />);
       }
     );
   };
@@ -60,43 +62,56 @@ function LocalNews() {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <>
+        <div className="header-LN">
+          <h1 className="brand-header">Local News</h1>
+          <h3 className="subtitle-header-LN">Some text goeds here</h3>
+        </div>
+        <div>{error}</div>
+      </>
+    );
   } else {
-
-  return (
-    <>
-      <div className="WN-container">
-        <div className="main-news">
-          <h1>Top Stories for $variable</h1>
-          <p>Top stories for local - same pattern as for World News</p>
+    return (
+      <>
+        <div className="header-LN">
+          <h1 className="brand-header">Local News</h1>
+          <h3 className="subtitle-header-LN">Some text goeds here</h3>
         </div>
-        <div className="most-read">
-          <h2>Weather</h2>
-          <p>
-            Maybe a weather API here leveraging the API call for local news?
-          </p>
-          <h2>
-            Your current latitude is {lat} <br />
-            And your longitude is {long}
-          </h2>
-          <button onClick={handleSubmit}>
-          Click Me if you would like to check <br /> Weather for your {city} city /
-          {country} country?
-        </button>
-        <div>
-          <h1>{data.name}</h1>
+        <div className="WN-container">
+          <div className="main-news">
+            <h1>Top Stories for $variable</h1>
+            <p>Top stories for local - same pattern as for World News</p>
+          </div>
+          <div className="most-read">
+            <h2>Weather</h2>
+            <p>
+              Maybe a weather API here leveraging the API call for local news?
+            </p>
+            <h2>
+              Your current latitude is {lat} <br />
+              And your longitude is {long}
+            </h2>
+            <button onClick={handleSubmit}>
+              Click Me if you would like to check <br /> Weather for your {city}{" "}
+              city /{country} country?
+            </button>
+            <div>
+              <h1>{data.name}</h1>
+            </div>
+            <div>{data.main ? <h2>{data.main.temp} fahrenheit</h2> : null}</div>
+            <div>
+              {data.weather ? <p>{data.weather[0].main} conditions</p> : null}
+            </div>
+            <div>
+              {data.main ? <p>{data.main.humidity} % humidity</p> : null}
+            </div>
+            <div>{data.wind ? <p>{data.wind.speed} wind speed</p> : null}</div>
+          </div>
         </div>
-        <div>{data.main ? <h2>{data.main.temp} fahrenheit</h2> : null}</div>
-        <div>
-          {data.weather ? <p>{data.weather[0].main} conditions</p> : null}
-        </div>
-        <div>{data.main ? <p>{data.main.humidity} % humidity</p> : null}</div>
-        <div>{data.wind ? <p>{data.wind.speed} wind speed</p> : null}</div>
-        </div>
-      </div>
-    </>
-  );
-}
+      </>
+    );
+  }
 }
 
 export default LocalNews;

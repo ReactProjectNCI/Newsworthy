@@ -9,7 +9,7 @@ $brand-size: 48px;
   background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 150px;
+  min-height: 200px;
   color: white;
 }
 
@@ -44,4 +44,19 @@ $brand-size: 48px;
   flex-basis: 40%;
   background-color: bisque;
   padding: 2%;
+}
+
+.header-LN {
+  border-bottom: 2px black solid;
+  background-image: url("../images/try1.jpeg");
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  color: black;
+}
+
+.error {
+  text-align: center;
 }
