@@ -3,11 +3,14 @@ $brand-font: Interstate, serif;
 $brand-size: 48px;
 
 .header {
-  text-align: center;
   border-bottom: 2px black solid;
-  background-image: url("../images/header-background.webp");
+  background-image: url("../images/bannertry1.png");
   background-position-x: center;
   background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 150px;
+  color: white;
 }
 
 .brand-header {
@@ -16,11 +19,16 @@ $brand-size: 48px;
   padding-bottom: 0;
   margin-bottom: 0;
   font-weight: 900;
+  margin-top: 0;
+  padding-top: 3%;
+  padding-left: 20px;
 }
 
 .subtitle-header {
   padding-top: 0;
   font-family: $brand-font;
+  padding-bottom: 2%;
+  padding-left: 20px;
 }
 
 .WN-container {

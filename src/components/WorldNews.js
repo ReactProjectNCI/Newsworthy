@@ -4,9 +4,9 @@ function WorldNews() {
   return (
     <>
       <div className="header">
-        <h1 className="brand-header">NewsWorthy</h1>
+        <h1 className="brand-header">World News</h1>
         <h3 className="subtitle-header">
-          The Definitive Guide to an Uncertain World
+          Your Definitive Guide to an Uncertain World
         </h3>
       </div>
       <div className="WN-container">
