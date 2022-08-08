@@ -1,17 +1,41 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 import "../structure.css";
 
-class WorldNews extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { name1: "Loading ⟳", count: 0 };
-  }
-  async componentDidMount() {
-    let res = await fetch(
+function WorldNews() {
+  const [worldNews, setWorldNews] = useEffect([]);
+
+  async function componentDidMount() {
+    let res = await axios.get(
       `https://newsapi.org/v2/everything?q=${this.props.newsName}&apiKey=79156c88061c41f48410cf961aa05af9`
     );
     let data = await res.json();
     let w = { width: "400px" };
+    setWorldNews(data.articles)
+    }
+
+return (<><div className="header">
+<h1 className="brand-header">World News</h1>
+<h3 className="subtitle-header">
+  Your Definitive Guide to an Uncertain World
+</h3>
+</div>
+<div>
+  {worldNews.map(function (i, index){
+    return (
+      <div key={index}>
+        <WorldNewsResult feature={i.something.something} />
+      </div>
+    )
+  })}
+  </div></>)
+
+
+      {worldNews.map(function(i, index)){
+        return (
+        <div key={index}><WorldNewsResult i={i} /></div>);}}
+
     let arr = data.articles.map((p) => {
       return (
         <>
@@ -51,7 +75,6 @@ class WorldNews extends React.Component {
               <br />
               <span>#globalnews</span>
               <br />
-              <p>testing</p>
             </div>
           </div>
         </>
