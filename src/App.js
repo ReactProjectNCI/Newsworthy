@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import WorldNews from "./components/WorldNews";
+import WorldNews from "./views/WorldNews";
 import NavBar from "./components/NavBar";
-import LocalNews from "./components/LocalNews";
-import Contribute from "./components/Contribute";
-import SignUp from "./components/Signup";
+import LocalNews from "./views/LocalNews";
+import Contribute from "./views/Contribute";
+import SignUp from "./views/Signup";
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "../structure.css";
 
-import NoCoOrds from "./NoCoOrds";
+import NoCoOrds from "../components/NoCoOrds";
 
 function LocalNews() {
   const myApiKey = "3896abe503404a159d076383d70a4539";
