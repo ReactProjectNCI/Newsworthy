@@ -51,6 +51,7 @@ class WorldNews extends React.Component {
               <br />
               <span>#globalnews</span>
               <br />
+              <p>testing</p>
             </div>
           </div>
         </>
