@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../structure.css";
-
+import LocalNewsItem from "../components/LocalNewsItem";
 import NoCoOrds from "../components/NoCoOrds";
 
 function LocalNews() {
@@ -13,6 +13,7 @@ function LocalNews() {
   const [country, setCountry] = useState("");
   const [error, setError] = useState("");
   const [data, setData] = useState({});
+  const [localNews, setLocalNews] = useState([]);
 
   useEffect(() => {
     getCoords();
@@ -51,22 +52,32 @@ function LocalNews() {
     );
   };
 
-  function handleSubmit(event) {
-    axios
-      .get(
+  useEffect(() => {
+    var getLocalNews = async () => {
+      const localNewsResult = await axios.get(
+        `https://newsapi.org/v2/everything?q=${country}&apiKey=79156c88061c41f48410cf961aa05af9`
+      );
+      setLocalNews(localNewsResult.data.articles);
+    };
+    getLocalNews();
+  });
+
+  useEffect(() => {
+    var getWeather = async () => {
+      const weather = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=a20aab9831307a0d4b3dbefec3d9781b`
-      )
-      .then((response) => {
-        setData(response.data);
-      });
-  }
+      );
+      setData(weather.data);
+    };
+    getWeather();
+  });
 
   if (error) {
     return (
       <>
         <div className="header-LN">
           <h1 className="brand-header">Local News</h1>
-          <h3 className="subtitle-header-LN">Some text goeds here</h3>
+          <h3 className="subtitle-header-LN">Some text goes here</h3>
         </div>
         <div>{error}</div>
       </>
@@ -79,25 +90,33 @@ function LocalNews() {
           <h3 className="subtitle-header-LN">Some text goeds here</h3>
         </div>
         <div className="WN-container">
-          <div className="main-news">
-            <h1>Top Stories for $variable</h1>
-            <p>Top stories for local - same pattern as for World News</p>
+          <div className="world-news-items-container">
+            <h1>Top Stories for {city}</h1>
+            {localNews.map(function (i, index) {
+              return (
+                <>
+                  <div className={`world-news-item-${index}`} key={index}>
+                    <img
+                      className={`news-image-${index}`}
+                      src={i.urlToImage}
+                      alt=""
+                    />
+                    <div className={`world-news-item-title-${index}`}>
+                      {i.title}
+                    </div>
+                    <p>{i.description}</p>
+                    <a href={i.url}>
+                      <button>Read More</button>
+                    </a>
+                  </div>
+                </>
+              );
+            })}
           </div>
           <div className="most-read">
             <h2>Weather</h2>
-            <p>
-              Maybe a weather API here leveraging the API call for local news?
-            </p>
-            <h2>
-              Your current latitude is {lat} <br />
-              And your longitude is {long}
-            </h2>
-            <button onClick={handleSubmit}>
-              Click Me if you would like to check <br /> Weather for your {city}{" "}
-              city /{country} country?
-            </button>
             <div>
-              <h1>{data.name}</h1>
+              <h1>{city}</h1>
             </div>
             <div>{data.main ? <h2>{data.main.temp} fahrenheit</h2> : null}</div>
             <div>

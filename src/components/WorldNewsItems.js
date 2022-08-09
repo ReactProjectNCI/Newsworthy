@@ -22,7 +22,7 @@ class WorldNewsItems extends React.Component {
             <div>
               <p>{p.description}</p>
               <a href={p.url}>
-                <button>Read more</button>
+                <button>Read More</button>
               </a>
             </div>
           </div>
