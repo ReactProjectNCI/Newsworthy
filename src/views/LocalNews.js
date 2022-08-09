@@ -128,19 +128,21 @@ function LocalNews() {
               <h1>{city}</h1>
             </div>
             <img
+              //use API's weather icons
               src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
               alt=""
             />
             <div>
               {data.main ? (
-                <p>{Math.round(data.main.temp - 273)} celcius</p>
+                // convert from kelvin to celcius
+                <p>{Math.round(data.main.temp - 273)}° celcius</p>
               ) : null}
             </div>
             <div>
               {data.weather ? <p>{data.weather[0].main} conditions</p> : null}
             </div>
             <div>
-              {data.main ? <p>{data.main.humidity} % humidity</p> : null}
+              {data.main ? <p>{data.main.humidity}% humidity</p> : null}
             </div>
             <div>{data.wind ? <p>{data.wind.speed} wind speed</p> : null}</div>
           </div>
