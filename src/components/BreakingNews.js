@@ -1,18 +1,35 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import BreakingNewsItem from "./BreakingNewsItem";
 
 function BreakingNews() {
   const [breakingNews, setBreakingNews] = useState([]);
 
-  async function searchNews() {
-    var newsResult = await axios.get(
-      "https://newsapi.org/v2/everything?q=bitcoin&apiKey=e58ecc6825494507b5f15ada84611d57"
-    );
-    setBreakingNews(newsResult);
-    console.log(breakingNews.data.articles);
-  }
-
-  return <>Hello</>;
+  useEffect(() => {
+    var getBreakingNews = async () => {
+      const newsResult = await axios.get(
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=e58ecc6825494507b5f15ada84611d57"
+      );
+      setBreakingNews(newsResult.data.articles);
+    };
+    getBreakingNews();
+  });
+  console.log(breakingNews);
+  return (
+    <>
+      <ol>
+        {breakingNews.map(function (i, index) {
+          return (
+            <>
+              <li className="breaking-news-list" key={index}>
+                <BreakingNewsItem title={i.title} url={i.url} />
+              </li>
+            </>
+          );
+        })}
+      </ol>
+    </>
+  );
 }
 
 export default BreakingNews;
