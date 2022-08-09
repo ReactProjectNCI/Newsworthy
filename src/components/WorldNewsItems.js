@@ -11,14 +11,16 @@ class WorldNewsItems extends React.Component {
       `https://newsapi.org/v2/everything?q=${this.props.newsName}&apiKey=79156c88061c41f48410cf961aa05af9`
     );
     let data = await res.json();
-    let arr = data.articles.map((p) => {
+    let arr = data.articles.map((p, index) => {
       return (
         <>
-          <div>
-            <div>{p.title}</div>
-            <img className="news-image" src={p.urlToImage} alt="" />
+          {/* Variable enables loop in Sass. Learnt how to assign variable to className here: https://stackoverflow.com/questions/29842289/how-to-pass-a-state-classname-variable-to-another-component-in-react */}
+          <div className={`world-news-item-${index}`}>
+            <img className={`news-image-${index}`} src={p.urlToImage} alt="" />
+            <div className={`world-news-item-title-${index}`}>{p.title}</div>
+
             <div>
-              <h4>{p.description}</h4>
+              <p>{p.description}</p>
               <a href={p.url}>
                 <button>Read more</button>
               </a>
@@ -31,7 +33,7 @@ class WorldNewsItems extends React.Component {
     this.setState({ name1: arr });
   }
   render() {
-    return <div>{this.state.name1}</div>;
+    return <>{this.state.name1}</>;
   }
 }
 

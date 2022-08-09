@@ -11,9 +11,9 @@ function WorldNews() {
           Your Definitive Guide to an Uncertain World
         </h3>
       </div>
+      <h1>Top Stories</h1>
       <div className="WN-container">
-        <div className="main-news">
-          <h1>Top Stories</h1>
+        <div className="world-news-items-container">
           <WorldNewsItems />
         </div>
         <div className="most-read">
