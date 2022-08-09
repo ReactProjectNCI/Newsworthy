@@ -42,7 +42,7 @@ $brand-size: 48px;
 .top-stories-container {
   flex-basis: 70%;
   padding-left: 4%;
-  background-color: rgb(3, 98, 162);
+  background-color: rgb(0, 51, 85);
   color: white;
 }
 
@@ -56,7 +56,7 @@ $brand-size: 48px;
 .breaking-news-container {
   flex-basis: 30%;
   padding-left: 4%;
-  background-color: red;
+  background-color: rgb(160, 1, 1);
   color: white;
   border-left: 1px solid black;
 }
@@ -88,6 +88,7 @@ $brand-size: 48px;
       display: flex;
       flex-direction: column;
       width: 99%;
+      margin-bottom: 7%;
     }
     .world-news-item-title-#{$i} {
       font-size: 40px;
@@ -105,6 +106,7 @@ $brand-size: 48px;
       flex-direction: column;
       width: 48%;
       padding: 1%;
+      margin-bottom: 5%;
     }
     .world-news-item-title-#{$i} {
       font-size: 30px;
@@ -122,6 +124,7 @@ $brand-size: 48px;
       flex-direction: column;
       width: 31%;
       padding: 1%;
+      margin-bottom: 3%;
     }
     .world-news-item-title-#{$i} {
       font-size: 20px;
@@ -140,4 +143,9 @@ $brand-size: 48px;
   padding-top: 15px;
   font-weight: 900;
   font-family: $font-stack;
+}
+
+.location-icon {
+  height: 100px;
+  width: 100px;
 }
