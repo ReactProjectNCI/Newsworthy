@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../structure.css";
-import LocalNewsItem from "../components/LocalNewsItem";
 import NoCoOrds from "../components/NoCoOrds";
 
 function LocalNews() {
@@ -95,7 +94,7 @@ function LocalNews() {
             {localNews.map(function (i, index) {
               return (
                 <>
-                  <div className={`world-news-item-${index}`} key={index}>
+                  <div className={`world-news-item-${index}`}>
                     <img
                       className={`news-image-${index}`}
                       src={i.urlToImage}
@@ -118,7 +117,10 @@ function LocalNews() {
             <div>
               <h1>{city}</h1>
             </div>
-            <div>{data.main ? <h2>{data.main.temp} fahrenheit</h2> : null}</div>
+            <img
+              src={`https://openweathermap.org/img/wn/${data.weather.icon}@2x.png`}
+            />
+            <div>{data.main ? <p>{data.main.temp} fahrenheit</p> : null}</div>
             <div>
               {data.weather ? <p>{data.weather[0].main} conditions</p> : null}
             </div>
