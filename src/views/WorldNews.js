@@ -1,6 +1,7 @@
 import React from "react";
 import "../structure.css";
 import WorldNewsItems from "../components/WorldNewsItems";
+import BreakingNews from "../components/BreakingNews";
 
 function WorldNews() {
   return (
@@ -17,11 +18,8 @@ function WorldNews() {
           <WorldNewsItems />
         </div>
         <div className="most-read">
-          <h2>Most Read</h2>
-          <p>
-            Some other API call made here - I've suggested Most Read - but that
-            may be hard to do. We could do videos or some other topic.
-          </p>
+          <h2>Breaking News</h2>
+          <BreakingNews />
         </div>
       </div>
     </>

@@ -29,7 +29,6 @@ class WorldNewsItems extends React.Component {
         </>
       );
     });
-    console.log(arr);
     this.setState({ name1: arr });
   }
   render() {
