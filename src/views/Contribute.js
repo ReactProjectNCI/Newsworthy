@@ -43,7 +43,7 @@ function Contribute() {
               <FontAwesomeIcon
                 icon={faShare}
                 className="location-icon"
-              ></FontAwesomeIcon>{" "}
+              ></FontAwesomeIcon>
               Name
               <input
                 name="name"
@@ -93,16 +93,17 @@ function Contribute() {
         </div>
         <div className="explanation-container">
           <h1 className="pitch-tag2">Why Write for NewsWorthy?</h1>
-          <FontAwesomeIcon
-            icon={faPenNib}
-            className="location-icon"
-          ></FontAwesomeIcon>
+
           <p>
             We <em>react</em> to the news as it happens. Through hundreds of
             people like <em>you</em>, we build a community of global knowledge
             within one framework that is dynamic, open to change, and
             responsive.
           </p>
+          <FontAwesomeIcon
+            icon={faPenNib}
+            className="location-icon"
+          ></FontAwesomeIcon>
           <p>
             <strong>You can be a component in this.</strong> Feed into the
             constant stream of evolving news that is NewsWorthy, and help us

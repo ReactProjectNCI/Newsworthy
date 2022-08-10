@@ -9,7 +9,7 @@
 }
 
 .brand {
-  font-family: Interstate, serif;
+  font-family: Palatino, serif;
   font-size: 32px;
   padding-left: 10px;
   padding-right: 15px;
@@ -26,7 +26,7 @@
 }
 
 .link {
-  font-family: Poynter, sans-serif;
+  font-family: Helvetica, sans-serif;
   color: white;
   background-color: black;
   height: 100%;
@@ -39,7 +39,7 @@
 }
 
 .link2 {
-  font-family: Poynter, sans-serif;
+  font-family: Helvetica, sans-serif;
   color: white;
   background-color: black;
   height: 100%;

@@ -1,6 +1,6 @@
-$font-stack: Poynter, sans-serif;
-$brand-font: Interstate, serif;
-$brand-size: 48px;
+$font-stack: Helvetica, sans-serif;
+$brand-font: Palatino, serif;
+$brand-size: 32px;
 
 .header {
   border-bottom: 2px black solid;
@@ -11,6 +11,7 @@ $brand-size: 48px;
   background-size: cover;
   min-height: 200px;
   color: white;
+  font-family: $brand-font;
 }
 
 .brand-header {
@@ -33,10 +34,12 @@ $brand-size: 48px;
 
 .WN-container {
   display: flex;
+  font-family: $font-stack;
 }
 .world-news-items-container {
   flex-basis: 70%;
   padding: 2%;
+  font-family: $font-stack;
 }
 
 .top-stories-container {
