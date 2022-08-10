@@ -22,7 +22,12 @@ function BreakingNews() {
           return (
             <>
               <li className="breaking-news-list" key={index}>
-                <BreakingNewsItem title={i.title} url={i.url} />
+                <BreakingNewsItem
+                  title={i.title}
+                  url={i.url}
+                  number={index}
+                  image={i.urlToImage}
+                />
               </li>
             </>
           );
