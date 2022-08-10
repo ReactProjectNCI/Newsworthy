@@ -1,3 +1,73 @@
+Here are a few steps I have added for the project to go from dev to build
+
+
+# Convert React app to PWA
+
+## make a new create-react-app MyApp --template cra-template-pwa
+
+copy the following files from new app into the project folder of the app you want to convert:
+
+### public/manifest.json
+ > update the logo and names parameters as needed
+
+### src/serviceWorkerRegistration.js
+### src/service-worker.js
+
+
+
+## register a service worker
+(src/index.js) 
+Add:
+### import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+and   
+## Change: `serviceWorker.unregister()`  to `serviceWorker.register()`
+
+
+## run `npm install`
+
+## run `npm run build`
+
+## run `npm install -g serve`
+
+
+
+
+# Deploy React PWA to Heroku
+
+## create server.js
+```
+'const express = require('express');
+const path = require('path');
+const port = process.env.PORT || 8080;
+const app = express();
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/ping', function (req, res) {
+  return res.send('ping');
+});
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html')); //serving build folder
+});
+app.listen(port);
+```
+
+## run `npm install express`
+
+## edit the package.json file so that the "scripts" section has `"start": "node server.js"` 
+
+Assuming that you already have a Heroku account and a Heroku app set up to deploy to...
+
+## run `npm install`
+## `git init`
+## heroku git:remote -a your-heroku-app
+## `git add . `
+## `git commit -m"always comment your commits"`
+## `git push heroku main`
+(might also be git push heroku master, depending on your local git branch)
+
+
+-----------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
