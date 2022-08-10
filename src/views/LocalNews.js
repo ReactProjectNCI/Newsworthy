@@ -13,6 +13,7 @@ function LocalNews() {
   const [error, setError] = useState("");
   const [data, setData] = useState({});
   const [localNews, setLocalNews] = useState([]);
+  const [icon, setIcon] = useState("");
 
   useEffect(() => {
     getCoords();
@@ -63,10 +64,13 @@ function LocalNews() {
 
   useEffect(() => {
     var getWeather = async () => {
-      const weather = await axios.get(
+      const weatherResult = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=a20aab9831307a0d4b3dbefec3d9781b`
       );
-      setData(weather.data);
+      setData(weatherResult.data);
+      console.log(weatherResult);
+      setIcon(weatherResult.data.weather[0].icon);
+      console.log(icon);
     };
     getWeather();
   });
@@ -89,8 +93,15 @@ function LocalNews() {
           <h3 className="subtitle-header-LN">Some text goeds here</h3>
         </div>
         <div className="WN-container">
-          <div className="world-news-items-container">
+          <div className="top-stories-container">
             <h1>Top Stories for {city}</h1>
+          </div>
+          <div className="breaking-news-container">
+            <h2>Weather</h2>
+          </div>
+        </div>
+        <div className="WN-container">
+          <div className="world-news-items-container">
             {localNews.map(function (i, index) {
               return (
                 <>
@@ -113,19 +124,25 @@ function LocalNews() {
             })}
           </div>
           <div className="most-read">
-            <h2>Weather</h2>
             <div>
               <h1>{city}</h1>
             </div>
             <img
-              src={`https://openweathermap.org/img/wn/${data.weather.icon}@2x.png`}
+              //use API's weather icons
+              src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+              alt=""
             />
-            <div>{data.main ? <p>{data.main.temp} fahrenheit</p> : null}</div>
+            <div>
+              {data.main ? (
+                // convert from kelvin to celcius
+                <p>{Math.round(data.main.temp - 273)}° celcius</p>
+              ) : null}
+            </div>
             <div>
               {data.weather ? <p>{data.weather[0].main} conditions</p> : null}
             </div>
             <div>
-              {data.main ? <p>{data.main.humidity} % humidity</p> : null}
+              {data.main ? <p>{data.main.humidity}% humidity</p> : null}
             </div>
             <div>{data.wind ? <p>{data.wind.speed} wind speed</p> : null}</div>
           </div>
