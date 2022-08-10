@@ -24,8 +24,16 @@ function WorldNews() {
         <div className="world-news-items-container">
           <WorldNewsItems />
         </div>
-
         <div className="most-read">
+          <iframe
+            src="https://www.youtube.com/embed/9Auq9mYxFEE"
+            title="YouTube video player"
+            width="400"
+            height="250"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
           <BreakingNews />
         </div>
       </div>
