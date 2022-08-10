@@ -23,7 +23,7 @@ $brand-size: 48px;
   padding: 2%;
 }
 
-form {
+.form-contrib {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,13 +48,38 @@ form {
   border: 1px solid black;
 }
 
+.form-sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2%;
+  width: 85%;
+  background-image: linear-gradient(
+      to left,
+      rgba(255, 153, 153, 0) 40%,
+      rgba(255, 255, 255, 0) 50%,
+      rgb(255, 255, 255) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 153, 153, 0) 40%,
+      rgba(255, 255, 255, 0) 50%,
+      rgb(255, 255, 255) 100%
+    ),
+    url("../images/subscribeFormBG.jpeg");
+  background-size: cover;
+  min-height: 500px;
+  background-position-x: center;
+  border: 1px solid black;
+}
+
 .table {
   background-color: rgb(80, 80, 80, 0.4);
   padding: 5%;
   align-self: center;
 }
 
-.header {
+.header-con {
   border-bottom: 2px black solid;
   background-image: linear-gradient(
       to left,
@@ -169,4 +194,21 @@ textarea:focus {
   background-color: rgb(4, 81, 4);
   color: white;
   padding: 2%;
+}
+
+.header-sub {
+  border-bottom: 2px black solid;
+  background-image: linear-gradient(
+      to left,
+      rgba(255, 153, 153, 0) 15%,
+      rgba(255, 153, 153, 0) 35%,
+      rgb(0, 0, 0) 70%
+    ),
+    url("../images/SubscribeBanner.jpeg");
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 200px;
+  color: white;
 }

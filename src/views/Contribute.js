@@ -18,7 +18,7 @@ function Contribute() {
 
   return (
     <>
-      <div className="header">
+      <div className="header-con">
         <h1 className="brand-header">Contribute</h1>
         <h3 className="subtitle-header">Tell It How It Is</h3>
       </div>
@@ -32,7 +32,11 @@ function Contribute() {
           </p>
           <p>Get it in the press and let the people react!</p>
 
-          <form onSubmit={handleSubmit(onSubmit)} id="contribForm">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            id="contribForm"
+            className="form-contrib"
+          >
             <div className="input-container">
               <h1 className="pitch">Pitch It</h1>
               Name
