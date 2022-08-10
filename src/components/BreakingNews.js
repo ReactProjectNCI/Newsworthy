@@ -17,13 +17,19 @@ function BreakingNews() {
   console.log(breakingNews);
   return (
     <>
+      <p>Top stories coming to you as they happen throughout the day.</p>
       <ol>
         {breakingNews.map(function (i, index) {
           return (
             <>
-              <li className="breaking-news-list" key={index}>
-                <BreakingNewsItem title={i.title} url={i.url} />
-              </li>
+              <div className="breaking-news-list" key={index}>
+                <BreakingNewsItem
+                  title={i.title}
+                  url={i.url}
+                  number={index}
+                  image={i.urlToImage}
+                />
+              </div>
             </>
           );
         })}
