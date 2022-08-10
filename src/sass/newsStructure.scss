@@ -146,6 +146,7 @@ $brand-size: 32px;
   padding-top: 15px;
   font-weight: 900;
   font-family: $font-stack;
+  margin-top: 0;
 }
 
 .location-icon {
@@ -177,4 +178,11 @@ $brand-size: 32px;
   width: 300px;
   height: 200px;
   object-fit: cover;
+}
+
+.BN-item-title {
+  margin-left: 0 !important;
+  background-color: rgb(188, 69, 69);
+  color: white;
+  padding: 2%;
 }
