@@ -54,10 +54,12 @@ function LocalNews() {
     );
   };
 
+    // spare weather api keys: 65777ad5c5bf243fad5fc4067aca49e9 79156c88061c41f48410cf961aa05af9
+
   useEffect(() => {
     var getLocalNews = async () => {
       const localNewsResult = await axios.get(
-        `https://newsapi.org/v2/everything?q=${country}&apiKey=79156c88061c41f48410cf961aa05af9`
+        `https://newsapi.org/v2/everything?q=${country}&apiKey=65777ad5c5bf243fad5fc4067aca49e9`
       );
       setLocalNews(localNewsResult.data.articles);
     };

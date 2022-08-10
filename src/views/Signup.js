@@ -57,15 +57,7 @@ function Signup() {
                 placeholder="Your email"
               />
               {errors?.email && <span>Please enter valid email address.</span>}
-              Do you wish to receive regular news updates?
-              <input
-                type="checkbox"
-                placeholder="Do you wish to receive regular news updates?"
-                {...register(
-                  "Do you wish to receive regular news updates?",
-                  {}
-                )}
-              />
+              
               <input className="submit" type="submit" />
             </div>
           </form>
