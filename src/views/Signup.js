@@ -30,7 +30,7 @@ function Signup() {
       </div>
       <div class="support-container">
         <div class="form-container">
-          <h2> Join our Mailing List</h2>
+          <h1 className="pitch-tag1"> Join our Mailing List</h1>
           <p>
             Get the latest and greatest straight to your inbox and always stay
             one step ahead of the game
@@ -62,7 +62,7 @@ function Signup() {
           </form>
         </div>
         <div className="explanation-container">
-          <h2>NewsWorthy</h2>
+          <h1 className="pitch-tag2">NewsWorthy</h1>
           <p>
             Bringing it all straight to you and as it happens: that's
             NewsWorthy. We take everything there is to know that's happening
