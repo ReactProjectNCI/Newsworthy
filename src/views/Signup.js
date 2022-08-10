@@ -12,15 +12,19 @@ function Signup() {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.loge(e);
+  const alertMessage1 = "Thank you! We will add your email address to our list.";
+  const onSubmit = (data) => {
+    alert(`${alertMessage1}`);
+    console.log(data);
+    reset('', {keepValues: false,})
   };
 
   //data => console.log(data);
   //console.log(errors);
 
+   // react hook form below with validation and span including error message
   // data is formatted in this way because it could be extended to build a mailing list in Mailchimp for exampls
   return (
     <>
@@ -42,13 +46,18 @@ function Signup() {
                 className="location-icon"
               ></FontAwesomeIcon>
               Name
-              <input {...register("name")} placeholder="Your name" />
+              <input name="name" {...register("name", {
+                  maxLength: 80,
+                  pattern: /^[a-z ,.'-]+$/i,
+                })} placeholder="Your name" /> 
+                {errors?.name && <span>Please enter your given name with letters.</span>}
               Email
-              <input
-                {...register("email", { required: true })}
+              <input name="email" 
+                {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                 placeholder="Your email"
               />
-              {errors.emailRequired && <span>Please enter email address.</span>}
+              {errors?.email && <span>Please enter valid email address.</span>}
+              Do you wish to receive regular news updates?
               <input
                 type="checkbox"
                 placeholder="Do you wish to receive regular news updates?"

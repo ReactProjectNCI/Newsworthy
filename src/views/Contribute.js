@@ -10,14 +10,18 @@ function Contribute() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
+    reset
   } = useForm();
   const alertMessage1 = "Thanks for expressing an interest ";
   const alertMessage2 = ". We will be in touch via email to ";
-  const onSubmit = (data) =>
-    alert(`${alertMessage1} ${data.name} ${alertMessage2} ${data.email}`);
+  const onSubmit = (data) =>{
+    alert(`${alertMessage1} ${data.name} ${alertMessage2} ${data.email}`)
+    reset('', {keepValues: false,
+    })}
 
+
+    // react hook form below with validation and span including error message
   return (
     <>
       <div className="header-con">

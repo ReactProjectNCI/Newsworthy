@@ -4,7 +4,9 @@ import "../structure.css";
 import NoCoOrds from "../components/NoCoOrds";
 
 function LocalNews() {
-  const myApiKey = "3896abe503404a159d076383d70a4539";
+  const myApiKey = "1c26ef53722f43b990445c59b7d3a57c";
+  //spare key "1c26ef53722f43b990445c59b7d3a57c"
+  //spare key "3896abe503404a159d076383d70a4539"
 
   const [long, setLong] = useState(0);
   const [lat, setLat] = useState(0);
