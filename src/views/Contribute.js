@@ -14,7 +14,7 @@ function Contribute() {
   const alertMessage2 = ". We will be in touch via email to ";
   const onSubmit = (data) =>
     alert(`${alertMessage1} ${data.name} ${alertMessage2} ${data.email}`);
-  console.log(watch[("name", "email", "comment")]);
+  
 
   return (
     <>
@@ -22,8 +22,8 @@ function Contribute() {
         <h1 className="brand-header">Contribute</h1>
         <h3 className="subtitle-header">Tell It How It Is</h3>
       </div>
-      <div class="support-container">
-        <div class="form-container">
+      <div className="support-container">
+        <div className="form-container">
           <h1 className="pitch-tag1">Let them Read All About It!</h1>
           <p>
             Get your voice heard by pitching us your best idea. We're always
@@ -36,20 +36,25 @@ function Contribute() {
             <div className="input-container">
               <h1 className="pitch">Pitch It</h1>
               Name
-              <input {...register("name")} placeholder="Your name" />
+              <input 
+                name = "name"
+                {...register("name", { maxLength: 80, pattern: /^[a-z ,.'-]+$/i})} placeholder="Your name" />
+                {errors?.name && <span><em>I hope you're not trying to inject code...</em></span>}
               Email
               <input
-                {...register("email", { required: true })}
+                name="email"
+                {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                 placeholder="Your email"
               />
-              {errors.emailRequired && <span>Please enter email address.</span>}
+                {errors?.email && <span><em>Please enter email address.</em></span>}
               Your idea
               <textarea
                 id="contribForm"
                 name="pitch"
-                {...register("comment")}
+                {...register("comment", { maxLength: 0, pattern: /^[a-z0-9 ,.'-]+$/i})}
                 placeholder="Pitch your idea here..."
               />
+              {errors?.pitch && <span><em>Please keep under 300 characters</em></span>}
               <input type="submit" className="submit" />
             </div>
           </form>
