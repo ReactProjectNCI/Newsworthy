@@ -1,6 +1,6 @@
 .header {
   border-bottom: 2px black solid;
-  background-image: url("../images/WorldNewsBanner.png");
+  background-image: url("./images/WorldNewsBanner.png");
   background-position-x: center;
   background-position-y: center;
   background-repeat: no-repeat;
@@ -60,7 +60,7 @@
 
 .header-LN {
   border-bottom: 2px black solid;
-  background-image: url("../images/LocalNewsBanner.jpeg");
+  background-image: url("./images/LocalNewsBanner.jpeg");
   background-position-x: right;
   background-position-y: center;
   background-repeat: no-repeat;

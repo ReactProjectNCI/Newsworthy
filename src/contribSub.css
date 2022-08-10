@@ -17,6 +17,8 @@
 .explanation-container {
   flex-basis: 50%;
   padding: 2%;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-contrib {
@@ -25,7 +27,7 @@
   justify-content: center;
   padding: 2%;
   width: 85%;
-  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), linear-gradient(to right, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), url("../images/contribFormBG.jpeg");
+  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), linear-gradient(to right, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), url("./images/contribFormBG.jpeg");
   background-size: cover;
   min-height: 500px;
   background-position-x: center;
@@ -38,7 +40,7 @@
   justify-content: center;
   padding: 2%;
   width: 85%;
-  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), linear-gradient(to right, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), url("../images/subscribeFormBG.jpeg");
+  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), linear-gradient(to right, rgba(255, 153, 153, 0) 40%, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255) 100%), url("./images/subscribeFormBG.jpeg");
   background-size: cover;
   min-height: 500px;
   background-position-x: center;
@@ -53,7 +55,7 @@
 
 .header-con {
   border-bottom: 2px black solid;
-  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 15%, rgba(255, 153, 153, 0) 35%, rgb(0, 0, 0) 70%), url("../images/ContributeBanner.jpeg");
+  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 15%, rgba(255, 153, 153, 0) 35%, rgb(0, 0, 0) 70%), url("./images/ContributeBanner.jpeg");
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -160,13 +162,26 @@ textarea:focus {
 
 .header-sub {
   border-bottom: 2px black solid;
-  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 15%, rgba(255, 153, 153, 0) 35%, rgb(0, 0, 0) 70%), url("../images/SubscribeBanner.jpeg");
+  background-image: linear-gradient(to left, rgba(255, 153, 153, 0) 15%, rgba(255, 153, 153, 0) 35%, rgb(0, 0, 0) 70%), url("./images/SubscribeBanner.jpeg");
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 200px;
   color: white;
+}
+
+.idea-image {
+  width: 70%;
+  height: 50%;
+  object-fit: cover;
+  align-self: center;
+}
+
+.location-icon {
+  height: 100px;
+  width: 100px;
+  align-self: center;
 }
 
 /*# sourceMappingURL=contribSub.css.map */

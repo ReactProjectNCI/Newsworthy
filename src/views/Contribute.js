@@ -1,6 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenNib, faShare } from "@fortawesome/free-solid-svg-icons";
+
 import "../contribSub.css";
 
 function Contribute() {
@@ -14,7 +17,6 @@ function Contribute() {
   const alertMessage2 = ". We will be in touch via email to ";
   const onSubmit = (data) =>
     alert(`${alertMessage1} ${data.name} ${alertMessage2} ${data.email}`);
-  
 
   return (
     <>
@@ -38,33 +40,63 @@ function Contribute() {
             className="form-contrib"
           >
             <div className="input-container">
-              <h1 className="pitch">Pitch It</h1>
+              <FontAwesomeIcon
+                icon={faShare}
+                className="location-icon"
+              ></FontAwesomeIcon>{" "}
               Name
-              <input 
-                name = "name"
-                {...register("name", { maxLength: 80, pattern: /^[a-z ,.'-]+$/i})} placeholder="Your name" />
-                {errors?.name && <span><em>I hope you're not trying to inject code...</em></span>}
+              <input
+                name="name"
+                {...register("name", {
+                  maxLength: 80,
+                  pattern: /^[a-z ,.'-]+$/i,
+                })}
+                placeholder="Your name"
+              />
+              {errors?.name && (
+                <span>
+                  <em>I hope you're not trying to inject code...</em>
+                </span>
+              )}
               Email
               <input
                 name="email"
-                {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                {...register("email", {
+                  required: true,
+                  pattern: /^\S+@\S+$/i,
+                })}
                 placeholder="Your email"
               />
-                {errors?.email && <span><em>Please enter email address.</em></span>}
+              {errors?.email && (
+                <span>
+                  <em>Please enter email address.</em>
+                </span>
+              )}
               Your idea
               <textarea
                 id="contribForm"
                 name="pitch"
-                {...register("comment", { maxLength: 0, pattern: /^[a-z0-9 ,.'-]+$/i})}
+                {...register("comment", {
+                  maxLength: 0,
+                  pattern: /^[a-z0-9 ,.'-]+$/i,
+                })}
                 placeholder="Pitch your idea here..."
               />
-              {errors?.pitch && <span><em>Please keep under 300 characters</em></span>}
+              {errors?.pitch && (
+                <span>
+                  <em>Please keep under 300 characters</em>
+                </span>
+              )}
               <input type="submit" className="submit" />
             </div>
           </form>
         </div>
         <div className="explanation-container">
           <h1 className="pitch-tag2">Why Write for NewsWorthy?</h1>
+          <FontAwesomeIcon
+            icon={faPenNib}
+            className="location-icon"
+          ></FontAwesomeIcon>
           <p>
             We <em>react</em> to the news as it happens. Through hundreds of
             people like <em>you</em>, we build a community of global knowledge

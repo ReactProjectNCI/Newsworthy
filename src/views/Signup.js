@@ -1,6 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "../structure.css";
+import "../contribSub.css";
+import IdeaImg from "../images/idea.jpeg";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 
 // uses react hook form to take input and validate
 function Signup() {
@@ -26,11 +30,17 @@ function Signup() {
       </div>
       <div class="support-container">
         <div class="form-container">
-          <h2> Do you want to receive news updates regularly?</h2>
-          <h3>Register your interest using the form below</h3>
+          <h2> Join our Mailing List</h2>
+          <p>
+            Get the latest and greatest straight to your inbox and always stay
+            one step ahead of the game
+          </p>
           <form onSubmit={handleSubmit(onSubmit)} className="form-sub">
             <div className="input-container">
-              <h1 className="pitch">Subscribe</h1>
+              <FontAwesomeIcon
+                icon={faMailBulk}
+                className="location-icon"
+              ></FontAwesomeIcon>
               Name
               <input {...register("name")} placeholder="Your name" />
               Email
@@ -51,7 +61,17 @@ function Signup() {
             </div>
           </form>
         </div>
-        <div className="explanation-container">Text Here</div>
+        <div className="explanation-container">
+          <h2>NewsWorthy</h2>
+          <p>
+            Bringing it all straight to you and as it happens: that's
+            NewsWorthy. We take everything there is to know that's happening
+            globally and locally, and give it to you full and fast. You'll stay
+            one step ahead of the game and know how to react to the big and the
+            small moves in the world.
+          </p>
+          <img className="idea-image" src={IdeaImg} alt="" />
+        </div>
       </div>
     </>
   );
