@@ -96,7 +96,7 @@ function LocalNews() {
           <div className="top-stories-container">
             <h1>Top Stories for {city}</h1>
           </div>
-          <div className="breaking-news-container">
+          <div className="weather-container">
             <h2>Weather</h2>
           </div>
         </div>
@@ -123,15 +123,17 @@ function LocalNews() {
               );
             })}
           </div>
-          <div className="most-read">
+          <div className="weather">
             <div>
               <h1>{city}</h1>
             </div>
-            <img
-              //use API's weather icons
-              src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-              alt=""
-            />
+            <div className="weather-icon">
+              <img
+                //use API's weather icons
+                src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
+                alt=""
+              />
+            </div>
             <div>
               {data.main ? (
                 // convert from kelvin to celcius
