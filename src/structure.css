@@ -28,6 +28,13 @@
   padding-left: 20px;
 }
 
+.subtitle-header-LN {
+  padding-top: 0;
+  font-family: Palatino, serif;
+  padding-bottom: 2%;
+  padding-left: 20px;
+}
+
 .WN-container {
   display: flex;
   font-family: Helvetica, sans-serif;

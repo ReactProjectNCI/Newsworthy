@@ -1,6 +1,6 @@
 import React from "react";
 import "../structure.css";
-import WorldNewsItems from "../components/WorldNewsItems";
+import WorldNewsItems2 from "../components/WorldNewsItems2";
 import BreakingNews from "../components/BreakingNews";
 
 function WorldNews() {
@@ -22,7 +22,7 @@ function WorldNews() {
       </div>
       <div className="WN-container">
         <div className="world-news-items-container">
-          <WorldNewsItems />
+          <WorldNewsItems2 />
         </div>
         <div className="most-read">
           <iframe

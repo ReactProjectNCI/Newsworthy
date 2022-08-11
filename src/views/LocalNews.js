@@ -4,9 +4,11 @@ import "../structure.css";
 import NoCoOrds from "../components/NoCoOrds";
 
 function LocalNews() {
-  const myApiKey = "1c26ef53722f43b990445c59b7d3a57c";
+  const myApiKey = "4bfd6ed991734860ba84bec607cbf411";
+  // old key: "1c26ef53722f43b990445c59b7d3a57c"
   //spare key "1c26ef53722f43b990445c59b7d3a57c"
   //spare key "3896abe503404a159d076383d70a4539"
+  // joe's key: "4bfd6ed991734860ba84bec607cbf411"
 
   const [long, setLong] = useState(0);
   const [lat, setLat] = useState(0);
@@ -54,22 +56,26 @@ function LocalNews() {
     );
   };
 
-    // spare weather api keys: 65777ad5c5bf243fad5fc4067aca49e9 79156c88061c41f48410cf961aa05af9
+  // spare weather api keys: 65777ad5c5bf243fad5fc4067aca49e9 79156c88061c41f48410cf961aa05af9
 
   useEffect(() => {
     var getLocalNews = async () => {
       const localNewsResult = await axios.get(
-        `https://newsapi.org/v2/everything?q=${country}&apiKey=65777ad5c5bf243fad5fc4067aca49e9`
+        // new key: 3e7d62ceaff441929bfef27bbf6d6b78
+        // old key: 65777ad5c5bf243fad5fc4067aca49e9
+        `https://newsapi.org/v2/everything?q=ie&apiKey=3e7d62ceaff441929bfef27bbf6d6b78`
       );
       setLocalNews(localNewsResult.data.articles);
     };
     getLocalNews();
-  });
+  }, []);
 
   useEffect(() => {
     var getWeather = async () => {
       const weatherResult = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=a20aab9831307a0d4b3dbefec3d9781b`
+        // joe's key: 36adf26f89bb60f529284126d6816236
+        // old key: a20aab9831307a0d4b3dbefec3d9781b
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=36adf26f89bb60f529284126d6816236`
       );
       setData(weatherResult.data);
       console.log(weatherResult);
@@ -77,7 +83,7 @@ function LocalNews() {
       console.log(icon);
     };
     getWeather();
-  });
+  }, []);
 
   if (error) {
     return (
@@ -94,7 +100,7 @@ function LocalNews() {
       <>
         <div className="header-LN">
           <h1 className="brand-header">Local News</h1>
-          <h3 className="subtitle-header-LN">Some text goeds here</h3>
+          <h3 className="subtitle-header-LN">Stories from your block</h3>
         </div>
         <div className="WN-container">
           <div className="top-stories-container">

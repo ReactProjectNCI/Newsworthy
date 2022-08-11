@@ -8,7 +8,7 @@ function BreakingNews() {
   useEffect(() => {
     var getBreakingNews = async () => {
       const newsResult = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=e58ecc6825494507b5f15ada84611d57"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=3e7d62ceaff441929bfef27bbf6d6b78"
       );
       setBreakingNews(newsResult.data.articles);
     };
